@@ -1,0 +1,9 @@
+{
+	"name": "adf-projects-satya",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8a92b326-2936-4d6f-ae6b-e99d7e5d3a31",
+		"tenantId": "45825890-8ceb-498f-bb33-2a470a1fa05c"
+	}
+}
