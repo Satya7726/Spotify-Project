@@ -1,0 +1,133 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-projects-satya"
+		},
+		"adls_linkservice_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_linkservice'"
+		},
+		"git_Server_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'git_Server'"
+		},
+		"ls_sqlDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_sqlDB'"
+		},
+		"ls_sql_spotify_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_sql_spotify'"
+		},
+		"adls_linkservice_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsprojectspotify.dfs.core.windows.net/"
+		},
+		"git_Server_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
+		"git_Server_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminsatya"
+		},
+		"ls_sqlDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azuresqlprojectserver.database.windows.net"
+		},
+		"ls_sqlDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Car_sales"
+		},
+		"ls_sqlDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminsatya"
+		},
+		"ls_sql_spotify_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azuresqlprojectserver.database.windows.net"
+		},
+		"ls_sql_spotify_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Car_sales"
+		},
+		"ls_sql_spotify_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminsatya"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-projects-satya_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"adls_linkservice_accountKey": {
+						"value": "[parameters('adls_linkservice_accountKey')]"
+					},
+					"git_Server_password": {
+						"value": "[parameters('git_Server_password')]"
+					},
+					"ls_sqlDB_password": {
+						"value": "[parameters('ls_sqlDB_password')]"
+					},
+					"ls_sql_spotify_password": {
+						"value": "[parameters('ls_sql_spotify_password')]"
+					},
+					"adls_linkservice_properties_typeProperties_url": {
+						"value": "[parameters('adls_linkservice_properties_typeProperties_url')]"
+					},
+					"git_Server_properties_typeProperties_url": {
+						"value": "[parameters('git_Server_properties_typeProperties_url')]"
+					},
+					"git_Server_properties_typeProperties_userName": {
+						"value": "[parameters('git_Server_properties_typeProperties_userName')]"
+					},
+					"ls_sqlDB_properties_typeProperties_server": {
+						"value": "[parameters('ls_sqlDB_properties_typeProperties_server')]"
+					},
+					"ls_sqlDB_properties_typeProperties_database": {
+						"value": "[parameters('ls_sqlDB_properties_typeProperties_database')]"
+					},
+					"ls_sqlDB_properties_typeProperties_userName": {
+						"value": "[parameters('ls_sqlDB_properties_typeProperties_userName')]"
+					},
+					"ls_sql_spotify_properties_typeProperties_server": {
+						"value": "[parameters('ls_sql_spotify_properties_typeProperties_server')]"
+					},
+					"ls_sql_spotify_properties_typeProperties_database": {
+						"value": "[parameters('ls_sql_spotify_properties_typeProperties_database')]"
+					},
+					"ls_sql_spotify_properties_typeProperties_userName": {
+						"value": "[parameters('ls_sql_spotify_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

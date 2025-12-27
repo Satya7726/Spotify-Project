@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-projects-satya"
+		},
+		"adls_linkservice_accountKey": {
+			"value": ""
+		},
+		"git_Server_password": {
+			"value": ""
+		},
+		"ls_sqlDB_password": {
+			"value": ""
+		},
+		"ls_sql_spotify_password": {
+			"value": ""
+		},
+		"adls_linkservice_properties_typeProperties_url": {
+			"value": "https://adlsprojectspotify.dfs.core.windows.net/"
+		},
+		"git_Server_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"git_Server_properties_typeProperties_userName": {
+			"value": "adminsatya"
+		},
+		"ls_sqlDB_properties_typeProperties_server": {
+			"value": "azuresqlprojectserver.database.windows.net"
+		},
+		"ls_sqlDB_properties_typeProperties_database": {
+			"value": "Car_sales"
+		},
+		"ls_sqlDB_properties_typeProperties_userName": {
+			"value": "adminsatya"
+		},
+		"ls_sql_spotify_properties_typeProperties_server": {
+			"value": "azuresqlprojectserver.database.windows.net"
+		},
+		"ls_sql_spotify_properties_typeProperties_database": {
+			"value": "Car_sales"
+		},
+		"ls_sql_spotify_properties_typeProperties_userName": {
+			"value": "adminsatya"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
